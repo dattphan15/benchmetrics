@@ -1,5 +1,6 @@
 const express = require("express");
 const multer = require('multer');
+const cors = require('cors')
 const fs =  require('fs');
 const csv = require('fast-csv')
 // load .env data into process.env
@@ -9,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 const ENV        = process.env.ENV || "development";
 
 const app = express();
-
+app.use(cors())
 const db = require("./db");
 
 var storage = multer.diskStorage({
@@ -26,8 +27,12 @@ var upload = multer({ storage: storage });
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 // Handle GET requests to /api route
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from server!" });
+app.get("/api", async (req, res) => {
+
+  const result = await db.query('select * from analytics')
+
+  console.log('result',result.rows);
+  res.json({ message: "Hello from server!", "data":result.rows });
 });
 
 
@@ -48,7 +53,29 @@ const csvRead = (path) =>{
       
       csvdata.push(data);
   }).on('end',()=>{
-    console.log(csvdata);
+    
+    let newdata = []
+    for (let i = 0; i < csvdata[0].length; i++) {
+      newdata[i] = []
+      for (let j = 0; j < csvdata.length; j++) {
+        newdata[i][j] =csvdata[j][i];  
+        
+      }
+      
+    }   
+console.log(newdata);
+    let query = "insert into analytics (metrics_name,metrics_count,week_change,percentile) VALUES ($1,$2,$3,$4)"
+    newdata.forEach(element => {
+         db.query(query,element,(err,res)=>{
+
+        if(err){
+          console.log(err)
+        }
+
+      });
+    });
+
+    // console.log(csvdata);
     fs.unlinkSync(filepath)
   })
   filestream.pipe(csvStream);
