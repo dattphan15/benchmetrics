@@ -51,14 +51,14 @@ function App() {
         </Container>
       </Navbar>
 
-      <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
-        <Tab eventKey="home" title="OVERVIEW">
+      <Tabs defaultActiveKey="overview" id="uncontrolled-tab-example" className="mb-3">
+        <Tab eventKey="overview" title="OVERVIEW">
           <Overview  cardData={cardData} />
         </Tab>
-        <Tab eventKey="profile" title="TRAFFIC">
+        <Tab eventKey="traffic" title="TRAFFIC">
           <Traffic cardData={cardData}/>
         </Tab>
-        <Tab eventKey="contact" title="SITE PERFORMANCE">
+        <Tab eventKey="site-performance" title="SITE PERFORMANCE">
           <Site  cardData={cardData} />
         </Tab>
       </Tabs>
