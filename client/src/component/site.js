@@ -33,7 +33,7 @@ const Site=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Users','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Users','week_change') }</p>
       
     </Card.Body>
   </Card>
@@ -50,7 +50,7 @@ const Site=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Two or More Sessions','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Two or More Sessions','week_change') }</p>
     </Card.Body>
   </Card>
 
@@ -66,7 +66,7 @@ const Site=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Internal Page Entries','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Internal Page Entries','week_change') }</p>
     </Card.Body>
   </Card>
 
@@ -82,7 +82,7 @@ const Site=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Sessions > 1 Min.','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Sessions > 1 Min.','week_change') }</p>
     </Card.Body>
   </Card> 
 

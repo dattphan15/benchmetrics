@@ -33,7 +33,7 @@ const Overview=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Sessions (Site Traffic)','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Sessions (Site Traffic)','week_change') }</p>
       
     </Card.Body>
   </Card>
@@ -50,7 +50,7 @@ const Overview=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Avg. Pages Viewed','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Avg. Pages Viewed','week_change') }</p>
     </Card.Body>
   </Card>
 
@@ -66,7 +66,7 @@ const Overview=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Avg. Time on Site','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Avg. Time on Site','week_change') }</p>
     </Card.Body>
   </Card>
 
@@ -82,7 +82,7 @@ const Overview=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Bounce Rate','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Bounce Rate','week_change') }</p>
     </Card.Body>
   </Card> 
 

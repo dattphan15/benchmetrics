@@ -33,7 +33,7 @@ const Traffic=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Direct Traffic','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Direct Traffic','week_change') }</p>
       
     </Card.Body>
   </Card>
@@ -50,7 +50,7 @@ const Traffic=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Organic Search','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Organic Search','week_change') }</p>
     </Card.Body>
   </Card>
 
@@ -66,7 +66,7 @@ const Traffic=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Social Traffic','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Social Traffic','week_change') }</p>
     </Card.Body>
   </Card>
 
@@ -82,7 +82,7 @@ const Traffic=(props)=>
       
       </h2>
       
-        <p>Ypur performance from last week {  getCardData('Referral Traffic','week_change') }</p>
+        <p>Your performance from last week {  getCardData('Referral Traffic','week_change') }</p>
     </Card.Body>
   </Card> 
 
