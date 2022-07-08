@@ -63,7 +63,7 @@ const csvRead = (path) =>{
       }
       
     }   
-console.log(newdata);
+console.log("NEW DATA: >>>> ", newdata);
     let query = "insert into analytics (metrics_name,metrics_count,week_change,percentile) VALUES ($1,$2,$3,$4)"
     newdata.forEach(element => {
          db.query(query,element,(err,res)=>{
