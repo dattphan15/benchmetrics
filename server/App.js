@@ -1,8 +1,17 @@
 const express = require("express");
+
+// Multer adds a body object and a file or files object to the request object. 
+// https://www.npmjs.com/package/multer
 const multer = require('multer');
-const cors = require('cors')
+
+// https://nodejs.org/api/fs.html
 const fs =  require('fs');
+
+// Fast-csv is library for parsing and formatting CSVs or any other delimited value file in node.
 const csv = require('fast-csv')
+
+
+const cors = require('cors')
 // load .env data into process.env
 require('dotenv').config();
 const path = require("path");
@@ -47,6 +56,8 @@ const csvRead = (path) =>{
  
   let csvdata = [];
   let filepath  = './uploads/'+path;
+
+  // Create a stream from the filepath.
   let filestream = fs.createReadStream(filepath);
 
   let csvStream = csv.parse().on('data',(data)=>{
@@ -58,13 +69,13 @@ const csvRead = (path) =>{
     for (let i = 0; i < csvdata[0].length; i++) {
       newdata[i] = []
       for (let j = 0; j < csvdata.length; j++) {
-        newdata[i][j] =csvdata[j][i];  
-        
+        newdata[i][j] = csvdata[j][i];  
+        console.log("NEW DATA [i][j]: >>>> ", newdata[i][j])
       }
       
     }   
 console.log("NEW DATA: >>>> ", newdata);
-    let query = "insert into analytics (metrics_name,metrics_count,week_change,percentile) VALUES ($1,$2,$3,$4)"
+    let query = "insert into analytics (metrics_name, metrics_count, week_change, percentile) VALUES ($1, $2, $3, $4)"
     newdata.forEach(element => {
          db.query(query,element,(err,res)=>{
 

@@ -38,10 +38,19 @@ An assessment project created with React, Express.JS and Postgres. Benchmetrics 
 
 2. Launch Postgres
 
-3. Insert Database Schema located in `server/db/schema/01_analytics.sql`
+3. Insert Database Schema located in `server/db/schema/01_analytics.sql` and verify the columns are appearing in the `analytics` table.
 
+4. Install Postman (Desktop version) and create a form-data POST request to `localhost:3001/api`.  
 
-4. Then follow the below steps to start the backend server.  
+```js
+key: file-data  
+// upload the data.csv file
+value: data.csv
+```
+
+Once you receive a 200 status OK, the data is loaded into the database and ready to fetch from the frontend client.
+
+5. Follow the below steps to start the backend server.  
 `cd ~/server`  
 `npm install`  
 `npm start`

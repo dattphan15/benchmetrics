@@ -4,7 +4,7 @@ import { Container, Row , Col , Card } from 'react-bootstrap';
 const Overview=(props)=>
 {
 
-  const { cardData} = props
+  const { cardData } = props
   const getCardData = (cardname,type) => {
     
     if(cardData.length ==0 ) return '';
